@@ -29,9 +29,14 @@ There's tree main ojectives we would like to achieve while working on this proje
 
 ## How to use this application?
 
-To start your Phoenix server:
+Also run `mix setup` to install and setup dependencies.
 
-* Run `mix setup` to install and setup dependencies
-* Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+To start the Phoenix server, on the terminal, populate the `OGMIOS_URL` environment variable with the demeter Authenticated Endipoint URL. Note that we change the protocol from `https` to websocket as `wss`. More information about demeter and its Authenticated Endipoint URL will be provide later.
+
+```shell
+OGMIOS_URL="wss://dmtr_ogmios_your_Authenticated_Endipoint_URL.demeter.run" iex -S mix phx.server
+```
+
+
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
