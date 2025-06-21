@@ -17,6 +17,7 @@ defmodule BlocksAnalytics.Application do
       # Start a worker by calling: BlocksAnalytics.Worker.start_link(arg)
       # {BlocksAnalytics.Worker, arg},
       # Start to serve requests, typically the last entry
+      {BlocksAnalytics.ChainSyncClient, url: ogmios_connection_url()},
       BlocksAnalyticsWeb.Endpoint
     ]
 
@@ -32,6 +33,10 @@ defmodule BlocksAnalytics.Application do
   def config_change(changed, _new, removed) do
     BlocksAnalyticsWeb.Endpoint.config_change(changed, removed)
     :ok
+  end
+
+  defp ogmios_connection_url() do
+    System.fetch_env!("OGMIOS_URL")
   end
 
   defp skip_migrations?() do
