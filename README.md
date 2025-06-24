@@ -27,11 +27,23 @@ There's tree main ojectives we would like to achieve while working on this proje
 * Learning on how to use [daisyUI](https://daisyui.com/docs/install/phoenix/) to create rich User Interfaces with Phoenix 1.8.
 * Learning more about Cardano through [Cardano Foudation Course](https://learn.academy.cardanofoundation.org/landing).
 
+## Analytics Databases Engines
+
+We are going to follow the same best practices the Plausible's team already have developing their analytics plataform. Thei use the [ClickHouse](https://clickhouse.com/clickhouse) engine. And to take advantage of it into the Elixir ecosystem, they created [ecto_ch](https://github.com/plausible/ecto_ch), the ClickHouse adapter for Ecto.
+
+There's also this post by [Andy LeClair](https://andyleclair.dev/posts/2025/01-21-things-you-can-do-with-ecto.html) describring on how to use some [ecto_ch](https://github.com/plausible/ecto_ch) capabilities powered by ClickHouse.
+
+The initial idea is to fetch the Cardano Block, use the [ecto_ch](https://github.com/plausible/ecto_ch) to persists the data appropriately for timeseries analysis and then, analyse it with DuckDB.
+
 ## How to use this application?
 
-To start your Phoenix server:
+Run `mix setup` to install and setup dependencies.
 
-* Run `mix setup` to install and setup dependencies
-* Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+To start the Phoenix server, on the terminal, populate the `OGMIOS_URL` environment variable with the demeter Authenticated Endpoint URL. Note that we replace the protocol from `https` to websocket as `wss`. More information about demeter and its Authenticated Endipoint URL will be provide later.
+
+```shell
+OGMIOS_URL="wss://dmtr_ogmios_your_Authenticated_Endipoint_URL.demeter.run" iex -S mix phx.server
+```
+
 
 Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
