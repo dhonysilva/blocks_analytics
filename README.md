@@ -34,6 +34,18 @@ There's also this post by [Andy LeClair](https://andyleclair.dev/posts/2025/01-2
 
 The initial idea is to fetch the Cardano Block, use the [ecto_ch](https://github.com/plausible/ecto_ch) to persists the data appropriately for timeseries analysis and then, analyse it with DuckDB.
 
+## Examples
+
+There's some great Analytics plataforms that graphically present the Cardano Blocks and whole chain of data related to it. Some of them are:
+
+* [eUTxO.org - Cardano Blockchain Explorer](https://eutxo.org)
+* [ADASTAT](https://adastat.net)
+* [Cexplorer.io](https://cexplorer.io)
+
+The whole list can be found [here](https://explorer.cardano.org).
+
+We don't intent to develop an application at this level. We're listing them here only for refence.
+
 ## How to use this application?
 
 Run `mix setup` to install and setup dependencies.
