@@ -28,15 +28,19 @@ These are the main ojectives we would like to achieve while working on this proj
 
 ## Analytics Databases Engines
 
-We are going to follow the same best practices the [Plausible](https://github.com/plausible/analytics)'s team already have developing their analytics plataform. They use the [ClickHouse](https://clickhouse.com/clickhouse) engine. And to take advantage of it into the Elixir ecosystem, they created [ecto_ch](https://github.com/plausible/ecto_ch), the ClickHouse adapter for Ecto.
+We are going to follow the same best practices the [Plausible](https://github.com/plausible/analytics)'s team already have developing their analytics plataform. They use the [ClickHouse](https://clickhouse.com/clickhouse) engine. And to take advantage of it into the Elixir ecosystem, they had created [ecto_ch](https://github.com/plausible/ecto_ch), the ClickHouse adapter for Ecto.
 
 There's also this post by [Andy LeClair](https://andyleclair.dev/posts/2025/01-21-things-you-can-do-with-ecto.html) describring on how to use some [ecto_ch](https://github.com/plausible/ecto_ch) capabilities powered by ClickHouse.
 
 The initial idea is to fetch the Cardano Block, use the [ecto_ch](https://github.com/plausible/ecto_ch) to persists the data appropriately for timeseries analysis and then, analyse it with DuckDB.
 
+### How to use two databases?
+
+We're going to use Ecto Repos as we will need need to connect to multiple databases, and on our cases, we'll set up a separate repo for each the ClickHouse database. Here is the [ClickhouseRepo](https://github.com/plausible/analytics/blob/master/lib/plausible/clickhouse_repo.ex) from the Plausible Analytics that we will use as a starting point.
+
 ## Examples
 
-There's some great Analytics plataforms that graphically present the Cardano Blocks and whole chain of data related to it. Some of them are:
+There's some great Analytics plataforms that graphically present the Cardano Blocks and the underlying chain of data related to it. Some of them are:
 
 * [eUTxO.org - Cardano Blockchain Explorer](https://eutxo.org)
 * [ADASTAT](https://adastat.net)
@@ -50,7 +54,7 @@ We don't intent to develop an application at this level. We're listing them here
 
 Run `mix setup` to install and setup dependencies.
 
-To start the Phoenix server, on the terminal, populate the `OGMIOS_URL` environment variable with the demeter Authenticated Endpoint URL. Note that we replace the protocol from `https` to websocket as `wss`. More information about demeter and its Authenticated Endipoint URL will be provide later.
+To start the Phoenix server, on the terminal, populate the `OGMIOS_URL` environment variable with the demeter Authenticated Endpoint URL. Note that we replace the protocol from `https` to websocket as `wss`. More information about demeter and its Authenticated Endpoint URL will be provide later.
 
 ```shell
 OGMIOS_URL="wss://dmtr_ogmios_your_Authenticated_Endipoint_URL.demeter.run" iex -S mix phx.server
