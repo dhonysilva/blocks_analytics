@@ -36,9 +36,9 @@ There's also this post by [Andy LeClair](https://andyleclair.dev/posts/2025/01-2
 
 The initial idea is to fetch the Cardano Block, use the [ecto_ch](https://github.com/plausible/ecto_ch) to persists the data appropriately for timeseries analysis and then, analyse it with DuckDB.
 
-### How to use two databases?
+### How to use multiple databases?
 
-We're going to use Ecto Repos as we will need need to connect to multiple databases, and on our cases, we'll set up a separate repo for each the ClickHouse database. Here is the [ClickhouseRepo](https://github.com/plausible/analytics/blob/master/lib/plausible/clickhouse_repo.ex) from the Plausible Analytics that we will use as a starting point.
+We're going to use Ecto Repos as we will need to connect to multiple databases, PostgresQL, ClickHouse and DuckDB, and on our cases, we'll set up a separate repo for the ClickHouse database. Here is the [ClickhouseRepo](https://github.com/plausible/analytics/blob/master/lib/plausible/clickhouse_repo.ex) from the Plausible Analytics that we will use as a starting point.
 
 ## Examples
 
