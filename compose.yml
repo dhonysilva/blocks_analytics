@@ -1,15 +1,4 @@
 services:
-  blocks_analytics_db:
-    image: postgres:16-alpine
-    restart: always
-    volumes:
-      - db-data:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_PASSWORD=postgres
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
-      start_period: 1m
-
   blocks_analytics_events_db:
     image: clickhouse/clickhouse-server:24.12-alpine
     restart: always
