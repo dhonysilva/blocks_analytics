@@ -8,7 +8,7 @@
 import Config
 
 config :blocks_analytics,
-  ecto_repos: [BlocksAnalytics.Repo],
+  ecto_repos: [BlocksAnalytics.Repo, BlocksAnalytics.ClickhouseRepo],
   generators: [timestamp_type: :utc_datetime]
 
 # Configures the endpoint
