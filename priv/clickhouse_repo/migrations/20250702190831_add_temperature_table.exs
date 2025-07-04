@@ -6,7 +6,7 @@ defmodule BlocksAnalytics.ClickhouseRepo.Migrations.AddTemperatureTable do
   end
 
   defp create_temperatures() do
-    create_if_not_exists table(:teperatures,
+    create_if_not_exists table(:temperatures,
                            primary_key: false,
                            engine: "MergeTree",
                            options: """
