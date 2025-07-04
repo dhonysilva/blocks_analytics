@@ -12,7 +12,8 @@ config :blocks_analytics,
   generators: [timestamp_type: :utc_datetime]
 
 config :blocks_analytics, BlocksAnalytics.ClickhouseRepo,
-  url: "http://127.0.0.1:8123/blocks_analytics_events_db"
+  url: "http://127.0.0.1:8123/blocks_analytics_events_db",
+  table_settings: []
 
 # Configures the endpoint
 config :blocks_analytics, BlocksAnalyticsWeb.Endpoint,
