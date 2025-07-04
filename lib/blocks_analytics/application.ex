@@ -10,6 +10,7 @@ defmodule BlocksAnalytics.Application do
     children = [
       BlocksAnalyticsWeb.Telemetry,
       BlocksAnalytics.Repo,
+      BlocksAnalytics.ClickhouseRepo,
       {Ecto.Migrator,
        repos: Application.fetch_env!(:blocks_analytics, :ecto_repos), skip: skip_migrations?()},
       {DNSCluster, query: Application.get_env(:blocks_analytics, :dns_cluster_query) || :ignore},

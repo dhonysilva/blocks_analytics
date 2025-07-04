@@ -59,7 +59,8 @@ defmodule BlocksAnalytics.MixProject do
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.5"},
-      {:xogmios, "~> 0.6.1"}
+      {:xogmios, "~> 0.6.1"},
+      {:ecto_ch, "~> 0.7.0"}
     ]
   end
 
