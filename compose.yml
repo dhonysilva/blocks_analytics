@@ -2,6 +2,8 @@ services:
   blocks_analytics_events_db:
     image: clickhouse/clickhouse-server:24.12-alpine
     restart: always
+    ports:
+      - "8123:8123"
     volumes:
       - event-data:/var/lib/clickhouse
       - event-logs:/var/log/clickhouse-server
