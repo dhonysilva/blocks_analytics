@@ -18,6 +18,7 @@ defmodule BlocksAnalyticsWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    live "/temperatures", TemperatureLive
   end
 
   # Other scopes may use custom stacks.
