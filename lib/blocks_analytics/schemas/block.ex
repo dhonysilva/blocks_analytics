@@ -4,6 +4,20 @@ defmodule BlocksAnalytics.Schemas.Block do
   """
   use Ecto.Schema
 
+  @type t :: %__MODULE__{
+          block_id: String.t(),
+          block_size: String.t(),
+          block_height: integer(),
+          block_slot: integer(),
+          issuer: String.t(),
+          tx_count: integer(),
+          ada_output: String.t(),
+          fees: String.t(),
+          date_time: NaiveDateTime.t(),
+          inserted_at: NaiveDateTime.t(),
+          __meta__: Ecto.Schema.Metadata.t()
+        }
+
   @primary_key false
   schema "blocks" do
     field(:block_id, :string)
