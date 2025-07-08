@@ -18,6 +18,7 @@ defmodule BlocksAnalytics.Application do
       # Start a worker by calling: BlocksAnalytics.Worker.start_link(arg)
       # {BlocksAnalytics.Worker, arg},
       # Start to serve requests, typically the last entry
+      BlocksAnalytics.Load,
       {BlocksAnalytics.ChainSyncClient, url: ogmios_connection_url()},
       BlocksAnalyticsWeb.Endpoint
     ]
