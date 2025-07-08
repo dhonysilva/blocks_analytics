@@ -60,7 +60,8 @@ defmodule BlocksAnalytics.MixProject do
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.5"},
       {:xogmios, "~> 0.6.1"},
-      {:ecto_ch, "~> 0.7.0"}
+      {:ecto_ch, "~> 0.7.0"},
+      {:number, "~> 1.0"}
     ]
   end
 
