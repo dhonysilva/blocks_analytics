@@ -35,7 +35,7 @@ defmodule BlocksAnalytics.Extract do
       block_size: Decimal.div(block["size"]["bytes"], 1000) |> Decimal.round(1) |> to_string,
       block_height: block["height"],
       block_slot: block["slot"],
-      issuer: block["issuer"],
+      issuer: normalize_issuer(block["issuer"]),
       tx_count: Enum.count(block["transactions"]),
       ada_output: ada_output,
       fees: fees,
@@ -50,7 +50,22 @@ defmodule BlocksAnalytics.Extract do
 
   defp date_time_utc do
     DateTime.now!("Etc/UTC")
-    |> DateTime.to_string()
-    |> String.slice(0..18)
+    |> DateTime.to_naive()
+    |> NaiveDateTime.truncate(:second)
   end
+
+  # Helper function to normalize issuer data to always be a string
+  defp normalize_issuer(nil), do: "unknown"
+  defp normalize_issuer(issuer) when is_binary(issuer), do: issuer
+
+  defp normalize_issuer(issuer) when is_map(issuer) do
+    # Extract pool_id, vrf_vkey, or convert to JSON string
+    cond do
+      Map.has_key?(issuer, "pool_id") -> Map.get(issuer, "pool_id")
+      Map.has_key?(issuer, "vrf_vkey") -> Map.get(issuer, "vrf_vkey")
+      true -> Jason.encode!(issuer)
+    end
+  end
+
+  defp normalize_issuer(issuer), do: to_string(issuer)
 end
