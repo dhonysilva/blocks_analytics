@@ -19,6 +19,7 @@ defmodule BlocksAnalyticsWeb.Router do
 
     get "/", PageController, :home
     live "/temperatures", TemperatureLive
+    live "/dashboard", DashboardLive
   end
 
   # Other scopes may use custom stacks.
