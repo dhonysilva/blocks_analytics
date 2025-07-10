@@ -7,6 +7,10 @@ defmodule BlocksAnalytics.Application do
 
   @impl true
   def start(_type, _args) do
+    if File.exists?(".env") do
+      Dotenv.load()
+    end
+
     children = [
       BlocksAnalyticsWeb.Telemetry,
       BlocksAnalytics.Repo,
