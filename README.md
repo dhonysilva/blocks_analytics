@@ -56,11 +56,23 @@ We don't intent to develop an application at this level. We're listing them here
 
 Run `mix setup` to install and setup dependencies.
 
-To start the Phoenix server, on the terminal, populate the `OGMIOS_URL` environment variable with the demeter Authenticated Endpoint URL. Note that we replace the protocol from `https` to websocket as `wss`. More information about demeter and its Authenticated Endpoint URL will be provide later.
+### OGMIOS_URL variable
+
+You can define the `OGMIOS_URL` in two ways:
+
+1 - To start the Phoenix server, on the terminal, populate the `OGMIOS_URL` environment variable with the demeter Authenticated Endpoint URL. Note that we replace the protocol from `https` to websocket as `wss`.
 
 ```shell
-OGMIOS_URL="wss://dmtr_ogmios_your_Authenticated_Endipoint_URL.demeter.run" iex -S mix phx.server
+OGMIOS_URL="wss://dmtr_ogmios_your_Authenticated_Endpoint_URL.demeter.run" iex -S mix phx.server
 ```
 
+2 - Create an `.env` file duplicating the `.env.example` and define your `OGMIOS_URL` environment variable.
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+```shell
+iex -S mix phx.server
+```
+
+More information about demeter and its Authenticated Endpoint URL will be provide later.
+
+
+Now you can visit [`localhost:4000`](http://localhost:4000) from your browser. Visit the [`localhost:4000/dashboard`](http://localhost:4000/dashboard) route to visualize the Dashboard Analytics.
