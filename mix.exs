@@ -61,7 +61,8 @@ defmodule BlocksAnalytics.MixProject do
       {:bandit, "~> 1.5"},
       {:xogmios, github: "wowica/xogmios", ref: "28f7347"},
       {:ecto_ch, "~> 0.7.0"},
-      {:number, "~> 1.0"}
+      {:number, "~> 1.0"},
+      {:dotenv, "~> 3.0.0"}
     ]
   end
 
