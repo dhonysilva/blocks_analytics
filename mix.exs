@@ -59,7 +59,7 @@ defmodule BlocksAnalytics.MixProject do
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.5"},
-      {:xogmios, github: "wowica/xogmios", ref: "28f7347"},
+      {:xogmios, "~> 0.7.0"},
       {:ecto_ch, "~> 0.7.0"},
       {:number, "~> 1.0"},
       {:dotenv, "~> 3.0.0"}
