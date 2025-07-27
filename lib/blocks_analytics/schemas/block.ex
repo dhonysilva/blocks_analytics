@@ -6,13 +6,13 @@ defmodule BlocksAnalytics.Schemas.Block do
 
   @type t :: %__MODULE__{
           block_id: String.t(),
-          block_size: String.t(),
+          block_size: integer(),
           block_height: integer(),
           block_slot: integer(),
           issuer: String.t(),
           tx_count: integer(),
-          ada_output: String.t(),
-          fees: String.t(),
+          ada_output: integer(),
+          fees: integer(),
           date_time: NaiveDateTime.t(),
           inserted_at: NaiveDateTime.t(),
           __meta__: Ecto.Schema.Metadata.t()
@@ -21,13 +21,13 @@ defmodule BlocksAnalytics.Schemas.Block do
   @primary_key false
   schema "blocks" do
     field(:block_id, :string)
-    field(:block_size, :string)
+    field(:block_size, Ch, type: "UInt32")
     field(:block_height, Ch, type: "UInt64")
     field(:block_slot, Ch, type: "UInt64")
     field(:issuer, :string)
     field(:tx_count, Ch, type: "UInt32")
-    field(:ada_output, :string)
-    field(:fees, :string)
+    field(:ada_output, Ch, type: "UInt32")
+    field(:fees, Ch, type: "UInt32")
     field(:date_time, Ch, type: "DateTime")
     field(:inserted_at, Ch, type: "DateTime")
   end
