@@ -32,7 +32,7 @@ We are going to follow the same best practices the [Plausible](https://github.co
 
 Here is a great opportunity to read the [ClickHouse - Lightning Fast Analytics for Everyone](https://www.vldb.org/pvldb/vol17/p3731-schulze.pdf) paper.
 
-There's also this post by [Andy LeClair](https://andyleclair.dev/posts/2025/01-21-things-you-can-do-with-ecto.html) describring on how to use some [ecto_ch](https://github.com/plausible/ecto_ch) capabilities powered by ClickHouse.
+There's also this post by [Andy LeClair](https://andyleclair.dev/posts/2025/01-21-things-you-can-do-with-ecto.html) describing on how to use some [ecto_ch](https://github.com/plausible/ecto_ch) capabilities powered by ClickHouse.
 
 The initial idea is to fetch the Cardano Block, use the [ecto_ch](https://github.com/plausible/ecto_ch) to persists the data appropriately for timeseries analysis and then, analyse it with DuckDB.
 
