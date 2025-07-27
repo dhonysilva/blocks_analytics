@@ -20,13 +20,13 @@ defmodule BlocksAnalytics.ClickhouseRepo.Migrations.CreateBlocksTable do
                            """
                          ) do
       add(:block_id, :string)
-      add(:block_size, :string)
+      add(:block_size, :UInt32)
       add(:block_height, :UInt64)
       add(:block_slot, :UInt64)
       add(:issuer, :string)
       add(:tx_count, :UInt32)
-      add(:ada_output, :string)
-      add(:fees, :string)
+      add(:ada_output, :UInt32)
+      add(:fees, :UInt32)
       add(:date_time, :naive_datetime)
       add(:inserted_at, :naive_datetime)
     end
