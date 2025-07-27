@@ -43,7 +43,7 @@ defmodule BlocksAnalyticsWeb.DashboardLive do
       if length(recent_blocks) > 0 do
         recent_blocks
         |> Enum.map(fn block ->
-          case Integer.parse(block.block_size) do
+          case block.block_size do
             {size, _} -> size
             _ -> 0
           end
@@ -58,7 +58,7 @@ defmodule BlocksAnalyticsWeb.DashboardLive do
       if length(recent_blocks) > 0 do
         recent_blocks
         |> Enum.map(fn block ->
-          case Integer.parse(block.fees) do
+          case block.fees do
             {fees, _} -> fees
             _ -> 0
           end
