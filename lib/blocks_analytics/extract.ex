@@ -18,21 +18,16 @@ defmodule BlocksAnalytics.Extract do
       |> Stream.flat_map(fn tx -> tx["outputs"] end)
       |> Stream.map(fn output -> output["value"]["ada"]["lovelace"] end)
       |> Enum.sum()
-      |> Decimal.div(1_000_000)
-      |> Number.Delimit.number_to_delimited(precision: 0)
 
     fees =
       Stream.map(block["transactions"], fn tx ->
         tx["fee"]["ada"]["lovelace"]
       end)
       |> Enum.sum()
-      |> Decimal.div(1_000_000)
-      |> Decimal.round(2)
-      |> to_string()
 
     new_block = %{
       block_id: block["id"],
-      block_size: Decimal.div(block["size"]["bytes"], 1000) |> Decimal.round(1) |> to_string,
+      block_size: block["size"]["bytes"],
       block_height: block["height"],
       block_slot: block["slot"],
       issuer: normalize_issuer(block["issuer"]),
