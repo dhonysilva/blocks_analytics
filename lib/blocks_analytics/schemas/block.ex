@@ -9,7 +9,14 @@ defmodule BlocksAnalytics.Schemas.Block do
           block_size: integer(),
           block_height: integer(),
           block_slot: integer(),
-          issuer: String.t(),
+          issuer_output: String.t(),
+          issuer_proof: String.t(),
+          issuer_count: integer(),
+          issuer_kes_period: integer(),
+          issuer_kes_verification_key: String.t(),
+          issuer_sigma: String.t(),
+          issuer_verification_key: String.t(),
+          issuer_vrf_verification_key: String.t(),
           tx_count: integer(),
           ada_output: integer(),
           fees: integer(),
@@ -24,7 +31,14 @@ defmodule BlocksAnalytics.Schemas.Block do
     field(:block_size, Ch, type: "UInt32")
     field(:block_height, Ch, type: "UInt64")
     field(:block_slot, Ch, type: "UInt64")
-    field(:issuer, :string)
+    field(:issuer_output, :string)
+    field(:issuer_proof, :string)
+    field(:issuer_count, Ch, type: "UInt32")
+    field(:issuer_kes_period, Ch, type: "UInt32")
+    field(:issuer_kes_verification_key, :string)
+    field(:issuer_sigma, :string)
+    field(:issuer_verification_key, :string)
+    field(:issuer_vrf_verification_key, :string)
     field(:tx_count, Ch, type: "UInt32")
     field(:ada_output, Ch, type: "UInt32")
     field(:fees, Ch, type: "UInt32")
@@ -39,7 +53,14 @@ defmodule BlocksAnalytics.Schemas.Block do
       :block_size,
       :block_height,
       :block_slot,
-      :issuer,
+      :issuer_output,
+      :issuer_proof,
+      :issuer_count,
+      :issuer_kes_period,
+      :issuer_kes_verification_key,
+      :issuer_sigma,
+      :issuer_verification_key,
+      :issuer_vrf_verification_key,
       :tx_count,
       :ada_output,
       :fees,
@@ -51,7 +72,14 @@ defmodule BlocksAnalytics.Schemas.Block do
       :block_size,
       :block_height,
       :block_slot,
-      :issuer,
+      :issuer_output,
+      :issuer_proof,
+      :issuer_count,
+      :issuer_kes_period,
+      :issuer_kes_verification_key,
+      :issuer_sigma,
+      :issuer_verification_key,
+      :issuer_vrf_verification_key,
       :tx_count,
       :ada_output,
       :fees,

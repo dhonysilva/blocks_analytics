@@ -23,7 +23,16 @@ defmodule BlocksAnalytics.ClickhouseRepo.Migrations.CreateBlocksTable do
       add(:block_size, :UInt32)
       add(:block_height, :UInt64)
       add(:block_slot, :UInt64)
-      add(:issuer, :string)
+
+      add(:issuer_output, :string)
+      add(:issuer_proof, :string)
+      add(:issuer_count, :UInt32)
+      add(:issuer_kes_period, :UInt32)
+      add(:issuer_kes_verification_key, :string)
+      add(:issuer_sigma, :string)
+      add(:issuer_verification_key, :string)
+      add(:issuer_vrf_verification_key, :string)
+
       add(:tx_count, :UInt32)
       add(:ada_output, :UInt32)
       add(:fees, :UInt32)
