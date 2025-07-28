@@ -176,7 +176,7 @@ defmodule BlocksAnalyticsWeb.DashboardLive do
   defp format_number(num) when is_integer(num) do
     num
     |> Integer.to_string()
-    |> String.replace(~r/\B(?=(\d{3})+(?!\d))/, ",")
+    |> String.replace(~r/\B(?=(\d{3})+(?!\d))/, ".")
   end
 
   defp format_number(num) when is_float(num) do
