@@ -403,7 +403,8 @@ defmodule BlocksAnalyticsWeb.DashboardLive do
                       <span>Fees: {format_ada_amount(block.fees)}</span>
                     </div>
                     <div class="mt-1 text-xs text-gray-500">
-                      Issuer: {String.slice(block.issuer, 0, 20)}...
+                      Issuer Count: {block.issuer_count}
+                      <span class="text-secondary">&middot;</span> Period: {block.issuer_kes_period}
                     </div>
                   </div>
                 </div>
